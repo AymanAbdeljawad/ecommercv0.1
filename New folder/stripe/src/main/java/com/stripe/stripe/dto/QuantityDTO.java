@@ -1,0 +1,13 @@
+package com.stripe.stripe.dto;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+@Data
+public class QuantityDTO {
+    private String productName;
+    @NotNull(message = "Quantity is mandatory")
+    @Min(value = 0, message = "Quantity must be zero or positive")
+    private Integer quantity;
+}
